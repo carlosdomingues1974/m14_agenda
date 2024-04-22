@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.school.m14_agenda.PrincipalController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Ficheiro">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuExitApplication" text="Sair" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Contactos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuAddContact" text="Inserir" />
+                  <MenuItem mnemonicParsing="false" onAction="#menuContactList" text="Consultar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ajuda">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#menuAbout" text="Acerca De..." />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="52.0" layoutY="144.0" text="AGENDA DE CONTACTOS" textAlignment="CENTER" textFill="#cc2626">
+               <font>
+                  <Font name="System Bold" size="58.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

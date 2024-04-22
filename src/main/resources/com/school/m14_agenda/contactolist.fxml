@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.school.m14_agenda.ContactoListController">
+   <children>
+      <Label layoutX="246.0" layoutY="14.0" text="Lista de Contactos" textFill="#e01a1a">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+       <TextField fx:id="txtSearch" layoutX="45.0" layoutY="67.0" prefHeight="25.0" prefWidth="262.0" />
+       <Button fx:id="btnSearch" layoutX="322.0" layoutY="65.0" mnemonicParsing="false" onAction="#buttonSearch" prefHeight="25.0" prefWidth="95.0" text="Pesquisar" textFill="#e40a0a">
+           <font>
+               <Font name="System Bold" size="12.0" />
+           </font>
+       </Button>
+      <TableView fx:id="tableViewContact" layoutX="7.0" layoutY="101.0" onMouseClicked="#selectedRow" prefHeight="222.0" prefWidth="787.0">
+        <columns>
+          <TableColumn fx:id="tableColumnID" prefWidth="40.0" style="-fx-alignment: center;" text="ID" />
+          <TableColumn fx:id="tableColumnName" prefWidth="250.0" text="Nome" />
+            <TableColumn fx:id="tableColumnEmail" prefWidth="250.0" text="Email" />
+            <TableColumn fx:id="tableColumnBirthDate" prefWidth="140.0" style="-fx-alignment: center;" text="Data Nascimento" />
+            <TableColumn fx:id="tableColumnPhone" prefWidth="100.0" text="Telefone" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnEdit" layoutX="194.0" layoutY="337.0" mnemonicParsing="false" onAction="#buttonEdit" prefHeight="29.0" prefWidth="95.0" text="Editar" textFill="#e40a0a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="331.0" layoutY="337.0" mnemonicParsing="false" onAction="#buttonDelete" prefHeight="29.0" prefWidth="95.0" text="Eliminar" textFill="#e40a0a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnClose" layoutX="471.0" layoutY="337.0" mnemonicParsing="false" onAction="#buttonClose" prefHeight="29.0" prefWidth="95.0" text="Fechar" textFill="#e40a0a">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

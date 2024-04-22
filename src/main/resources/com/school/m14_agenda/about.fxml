@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #a1e7ed;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.school.m14_agenda.AboutController">
+    <children>
+        <Label layoutX="14.0" layoutY="21.0" text="Escola Secundária Ferreira Dias" textFill="#d91616">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="66.0" fitWidth="115.0" layoutX="381.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@image/logoaquaalba.jpg" />
+            </image>
+        </ImageView>
+        <Label layoutX="23.0" layoutY="136.0" text="Módulo 19 - Tecnologia de Acesso a Base de Dados" textFill="#677705">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="14.0" layoutY="259.0" text="Desenvolvido por: Carlos Domingues">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
