@@ -85,7 +85,7 @@ public class ContactoListController implements Initializable {
                 if(contactos.getName().toLowerCase().contains(searchName) ){
                     return true;
                 }
-                else if(String.valueOf(contactos.getId()).indexOf(searchName) != -1){
+                else if(String.valueOf(contactos.getId()).contains(searchName)){
                     return true;
                 }
                 else{

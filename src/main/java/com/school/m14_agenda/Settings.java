@@ -1,8 +1,11 @@
 package com.school.m14_agenda;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class Settings {
@@ -65,6 +68,56 @@ public class Settings {
 
     public static void setContacts(ObservableList<Contactos> contacts) {
         Settings.contacts = contacts;
+    }
+    //endregion
+
+    // region Métodos de validação de dados
+
+    /**
+     * Método para limitar o preenchimento de qualquer TextField a um número máximo de carateres
+     * @param textField mensagem a tratar
+     * @param maxLength tamanho máximo a impor
+     */
+    public static void checkMaxLength(TextField textField, int maxLength) {
+        textField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                if (textField.getText().length() > maxLength) {
+                    String s = textField.getText().substring(0, maxLength);
+                    textField.setText(s);
+                }
+            }
+        });
+    }
+
+    /**
+     * Método que apenas permiti apenas algarismos nas TextFields
+     * @param textField mensagem a tratar
+     */
+    public static void isNumeric(TextField textField){
+        textField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                if (!newValue.matches("[0-9]")) {
+                    textField.setText(newValue.replaceAll("[^0-9]", ""));
+                }
+            }
+        });
+    }
+
+    /**
+     * Método que apenas permiti apenas permite letras do alfabeto e a tecla espaço nas TextFields
+     * @param textField mensagem a tratar
+     */
+    public static void isTextOnly(TextField textField){
+        textField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                if(!newValue.matches("[a-zA-z ]")){
+                    textField.setText(newValue.replaceAll("[^a-zA-Z ]", ""));
+                }
+            }
+        });
     }
     //endregion
 }
