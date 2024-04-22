@@ -105,8 +105,6 @@ public class ContactoController implements Initializable {
         }
     }
 
-    public void TextFieldNameKeyPressed(KeyEvent keyEvent) {
-    }
 
     public void buttonAction(ActionEvent actionEvent) {
         switch (Settings.ACTION) {
@@ -172,5 +170,20 @@ public class ContactoController implements Initializable {
         thisStage.close();
     }
 
+    //region Validação de dados
+    public void TextFieldNameKeyPressed(KeyEvent keyEvent) {
+        Settings.checkMaxLength((TextField) keyEvent.getSource(), 100);
+        Settings.isTextOnly((TextField) keyEvent.getSource());
+    }
 
+    public void TextFieldEmailKeyPressed(KeyEvent keyEvent) {
+        Settings.checkMaxLength((TextField) keyEvent.getSource(), 255);
+    }
+
+
+    public void TextFieldPhoneKeyPressed(KeyEvent keyEvent) {
+        Settings.checkMaxLength((TextField) keyEvent.getSource(), 9);
+        Settings.isNumeric((TextField) keyEvent.getSource());
+    }
+    //endregion
 }
